@@ -20,9 +20,8 @@ public class ProductoRepository implements ProductRepository {
     @Autowired
     private ProductMapper mapper;
 
-
     @Override
-    public List<Product> getAll(){
+    public List<Product> getAll() {
         List<Producto> productos = (List<Producto>) productoCrudRepository.findAll();
         return mapper.toProducts(productos);
     }
@@ -41,7 +40,7 @@ public class ProductoRepository implements ProductRepository {
 
     @Override
     public Optional<Product> getProduct(int productId) {
-       return productoCrudRepository.findById(productId).map(producto -> mapper.toProduct(producto));
+        return productoCrudRepository.findById(productId).map(producto -> mapper.toProduct(producto));
     }
 
     @Override
@@ -50,9 +49,8 @@ public class ProductoRepository implements ProductRepository {
         return mapper.toProduct(productoCrudRepository.save(producto));
     }
 
-
     @Override
-    public void delete(int productId){
+    public void delete(int productId) {
         productoCrudRepository.deleteById(productId);
     }
 

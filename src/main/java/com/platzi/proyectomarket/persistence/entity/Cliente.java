@@ -7,15 +7,13 @@ import java.util.List;
 @Table(name = "clientes")
 public class Cliente {
     @Id
-    @Column(name = "id_cliente")
     private String id;
-
     private String nombre;
     private String apellidos;
-    private long celular;
+    private Long celular;
     private String direccion;
 
-    @Column(name = "correo_electrico")
+    @Column(name = "correo_electronico")
     private String correoElectronico;
 
     @OneToMany(mappedBy = "cliente")
@@ -46,11 +44,11 @@ public class Cliente {
         this.apellidos = apellidos;
     }
 
-    public long getCelular() {
+    public Long getCelular() {
         return celular;
     }
 
-    public void setCelular(long celular) {
+    public void setCelular(Long celular) {
         this.celular = celular;
     }
 
